@@ -16,6 +16,6 @@ Gem::Specification.new do |s|
   s.executables += Dir['bin/*'].map { |f| File.basename(f) }
   s.homepage    = 'http://rubygems.org/gems/ruby_vsts'
   s.license     = 'MIT'
-  # s.add_runtime_dependency 'rubyzip', '~> 1.1'
+  s.add_runtime_dependency 'rest-client'
   s.add_development_dependency 'minitest'
 end
