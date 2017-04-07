@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   ENDOFDESC
   s.author      = 'Gabor Lengyel'
   s.email       = 'ruby_vsts@prodexity.com'
-  s.files       = `git ls-files`.split($\)
+  s.files       = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
   s.bindir      = 'bin'
   s.executables += Dir['bin/*'].map { |f| File.basename(f) }
   s.homepage    = 'http://rubygems.org/gems/ruby_vsts'
