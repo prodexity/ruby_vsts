@@ -1,7 +1,18 @@
 # VSTS namespace
 module VSTS
   # Changeset model
-  class Changeset
+  class Changeset < BaseModel
+    attr_accessor :id, :url, :author, :checked_in_by, :created_date, :comment
+
+    def initialize(h = {})
+      @id = h["changesetId"]
+      @url = h["url"]
+      @author = Identity.new(h["author"])
+      @checked_in_by = Identity.new(h["checkedInBy"])
+      @created_date = DateTime.rfc3339(h["createdDate"])
+      @comment = h["comment"]
+    end
+
     # List changesets
     # See https://www.visualstudio.com/en-us/docs/integrate/api/tfvc/changesets#get-list-of-changesets
     #
@@ -41,7 +52,8 @@ module VSTS
     # @return [Changeset, nil] the changeset found or nil
     def self.find(id, opts = {})
       urlparams = APIClient.build_params(opts, [:includeDetails, :includeWorkItems, :maxCommentLength, :maxChangeCount])
-      APIClient.get("/changesets/#{id}", area: "tfvc", urlparams: urlparams)
+      resp = APIClient.get("/changesets/#{id}", area: "tfvc", urlparams: urlparams)
+      Changeset.new(resp.parsed)
     end
   end
 end

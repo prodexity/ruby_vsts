@@ -1,6 +1,6 @@
 # VSTS namespace
 module VSTS
   # Item model
-  class Item
+  class Item < BaseModel
   end
 end
