@@ -7,6 +7,7 @@ require 'ruby_vsts/item'
 module VSTS
   class << self
     attr_accessor :configuration
+    attr_accessor :logger
   end
 
   def self.configuration
@@ -19,5 +20,9 @@ module VSTS
 
   def self.configure
     yield(configuration)
+  end
+
+  def self.logger
+    @logger ||= Logger.new(STDOUT)
   end
 end
