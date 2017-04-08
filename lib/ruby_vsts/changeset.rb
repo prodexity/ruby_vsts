@@ -37,7 +37,8 @@ module VSTS
           :maxCommentLength
         ]
       )
-      APIClient.get("/changesets", area: "tfvc", urlparams: urlparams)
+      resp = APIClient.get("/changesets", area: "tfvc", urlparams: urlparams)
+      resp.parsed["value"].map { |o| Changeset.new(o) }
     end
 
     # Find specific changeset by id
