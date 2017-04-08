@@ -1,6 +1,5 @@
 require 'rest-client'
 require 'base64'
-require 'json'
 
 # VSTS namespace
 module VSTS
@@ -22,7 +21,7 @@ module VSTS
     def self.request(method, resource, opts = {})
       url = build_url(resource, opts)
       VSTS.logger.debug("VSTS request: #{method} #{url}") if VSTS.configuration.debug
-      resp = RestClient::Request.execute(
+      req = {
         method: method,
         url: url,
         payload: opts[:payload],
@@ -31,8 +30,9 @@ module VSTS
           Accept: "application/json",
           "Content-Type" => "application/json"
         }
-      )
-      JSON.parse(resp.body)
+      }
+      resp = RestClient::Request.execute(req)
+      APIResponse.new(req, resp)
     end
 
     # Helper method for GET requests, calls #request
