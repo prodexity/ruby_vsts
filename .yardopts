@@ -2,9 +2,7 @@
 --main README.md
 --title 'Ruby VSTS Documentation'
 --no-private
+--markup=markdown
 -
-CONTRIBUTING.md
-COPYING
-LICENSE
+LICENSE.txt
 README.md
-CHANGELOG.md
