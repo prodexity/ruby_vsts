@@ -4,7 +4,6 @@ require "#{basedir}/lib/vsts/version"
 Gem::Specification.new do |s|
   s.name        = 'ruby_vsts'
   s.version     = VSTS::VERSION
-  s.date        = '2017-04-09'
   s.summary     = 'An unofficial Microsoft Visual Studio Team Services (VSTS) API client in Ruby'
   s.description = <<-ENDOFDESC
     An API client to the Microsoft Visual Studio online Rest APIs. It can connect to VSTS via the public API
