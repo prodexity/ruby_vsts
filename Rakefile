@@ -1,11 +1,14 @@
 require 'bundler/gem_tasks'
+require 'rspec/core/rake_task'
 
-begin
-  require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new(:test)
 
-  RSpec::Core::RakeTask.new(:test)
+task test_and_report: [:test, :report_coverage]
 
-  task default: :test
-rescue LoadError
-  puts 'RSpec rake tasks not available. Please run "bundle install" to install missing dependencies.'
+task :report_coverage do
+  ENV["CODECLIMATE_REPO_TOKEN"] = File.read(".codeclimate_repo_token") if File.exist?(".codeclimate_repo_token")
+  `codeclimate-test-reporter`
 end
+
+desc "Run tests and report coverage to CodeClimate"
+task default: :test_and_report
