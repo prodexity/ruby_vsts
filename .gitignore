@@ -1,3 +1,6 @@
+# Gem builds
+pkg/
+
 # Bundler files
 .bundle
 Gemfile.lock
