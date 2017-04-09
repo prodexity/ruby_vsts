@@ -10,6 +10,12 @@ Style/StringLiterals:
   Enabled: false
   # EnforcedStyle: double_quotes # if enabled, this can be single_quotes or double_quotes
 
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
 Metrics/LineLength:
   Max: 135
   # To make it possible to copy or click on URIs in the code, we allow lines
