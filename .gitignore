@@ -1,0 +1,5 @@
+# Ignore Byebug command history file.
+.byebug_history
+
+# SimpleCov code coverage reports
+/coverage
