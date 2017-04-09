@@ -4,6 +4,9 @@ module VSTS
   class Changeset < BaseModel
     attr_accessor :id, :url, :author, :checked_in_by, :created_date, :comment
 
+    # Create new changeset instance from a hash
+    #
+    # @param h [Hash] changeset data as returned by the VSTS API
     def initialize(h = {})
       @id = h["changesetId"]
       @url = h["url"]
@@ -11,6 +14,19 @@ module VSTS
       @checked_in_by = Identity.new(h["checkedInBy"])
       @created_date = DateTime.rfc3339(h["createdDate"])
       @comment = h["comment"]
+      @_changes = nil
+    end
+
+    # Get changes in the changeset
+    # See https://www.visualstudio.com/en-us/docs/integrate/api/tfvc/changesets#get-list-of-changes-in-a-changeset
+    #
+    # @param opts [Hash]
+    # @return [array of Change] list of changes in the changeset
+    def changes(opts = {})
+      return @_changes if @_changes.instance_of?(Array)
+      urlparams = APIClient.build_params(opts, [["$", :top], ["$", :skip]])
+      resp = APIClient.get("/changesets/#{id}/changes", area: "tfvc", urlparams: urlparams)
+      @_changes = resp.parsed["value"].map { |o| Change.new(o) }
     end
 
     # List changesets

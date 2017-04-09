@@ -3,8 +3,9 @@ require 'ruby_vsts/api_client'
 require 'ruby_vsts/api_response'
 require 'ruby_vsts/base_model'
 require 'ruby_vsts/identity'
-require 'ruby_vsts/changeset'
 require 'ruby_vsts/item'
+require 'ruby_vsts/change'
+require 'ruby_vsts/changeset'
 
 # Base namespace for ruby_vsts
 module VSTS
