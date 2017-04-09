@@ -1,5 +1,17 @@
+# Bundler files
+.bundle
+Gemfile.lock
+
 # Ignore Byebug command history file.
 .byebug_history
 
 # SimpleCov code coverage reports
 /coverage
+
+# CodeClimate repo token to report code coverage
+# See https://codeclimate.com/repos/58ea190f4e4fc9029400296b/coverage_setup
+.codeclimate_repo_token
+
+# Temporary backups, unneeded files
+*.old
+*.orig

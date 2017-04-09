@@ -1,7 +1,11 @@
-require 'rake/testtask'
+require 'bundler/gem_tasks'
 
-Rake::TestTask.new do |t|
-  t.name = "test"
-  t.libs << ["test"]
-  t.test_files = FileList["test/*_test.rb"]
+begin
+  require 'rspec/core/rake_task'
+
+  RSpec::Core::RakeTask.new(:test)
+
+  task default: :test
+rescue LoadError
+  puts 'RSpec rake tasks not available. Please run "bundle install" to install missing dependencies.'
 end

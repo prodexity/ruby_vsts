@@ -1,25 +1,18 @@
----
 engines:
   duplication:
     enabled: true
     config:
       languages:
-      - ruby
-      - javascript
-      - python
-      - php
+        - ruby
   fixme:
     enabled: true
   rubocop:
     enabled: true
 ratings:
   paths:
-  - "**.inc"
-  - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
+    - lib/**
+    - "**.rb"
+
 exclude_paths:
-- test/
+  - spec/**/*
+  - vendor/**/*

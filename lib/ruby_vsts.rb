@@ -1,11 +1,11 @@
-require 'ruby_vsts/configuration'
-require 'ruby_vsts/api_client'
-require 'ruby_vsts/api_response'
-require 'ruby_vsts/base_model'
-require 'ruby_vsts/identity'
-require 'ruby_vsts/item'
-require 'ruby_vsts/change'
-require 'ruby_vsts/changeset'
+require 'vsts/configuration'
+require 'vsts/api_client'
+require 'vsts/api_response'
+require 'vsts/base_model'
+require 'vsts/identity'
+require 'vsts/item'
+require 'vsts/change'
+require 'vsts/changeset'
 
 # Base namespace for ruby_vsts
 module VSTS
