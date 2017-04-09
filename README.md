@@ -1,6 +1,8 @@
 # ruby_vsts
 An unofficial Microsoft Visual Studio Team Services (VSTS) API client in Ruby
 
+[![Code Climate](https://codeclimate.com/github/prodexity/ruby_vsts.png)](https://codeclimate.com/github/prodexity/ruby_vsts)
+
 # About
 This will be a Ruby gem to connect to the Microsoft Visual Studio online (VSTS) Rest API.
 It may also work with recent versions of TFS too. *Work is heavily in progress!*
