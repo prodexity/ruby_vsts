@@ -14,7 +14,7 @@ describe VSTS::Configuration do
   end
 
   it 'has an accessible configuration' do
-    expect(VSTS.configuration).to be_a(VSTS::Configuration)
+    expect(VSTS.configuration).to be_a(described_class)
   end
 
   it 'has its fields configured' do
