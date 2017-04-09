@@ -15,6 +15,10 @@ Gemfile.lock
 # See https://codeclimate.com/repos/58ea190f4e4fc9029400296b/coverage_setup
 .codeclimate_repo_token
 
+# Yard documentation files
+.yardoc/
+doc/
+
 # Temporary backups, unneeded files
 *.old
 *.orig
