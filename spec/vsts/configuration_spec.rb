@@ -1,5 +1,6 @@
 require 'spec_helper'
 
+# rubocop:disable Metrics/BlockLength
 describe VSTS::Configuration do
   before do
     VSTS.configure do |config|
@@ -38,3 +39,4 @@ describe VSTS::Configuration do
     expect(VSTS.configuration.base_url).to eq("")
   end
 end
+# rubocop:enable Metrics/BlockLength

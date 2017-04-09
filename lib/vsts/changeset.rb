@@ -68,7 +68,7 @@ module VSTS
     # @option opts [boolean] :includeWorkItems
     # @return [Changeset, nil] the changeset found or nil
     def self.find(id, opts = {})
-      urlparams = APIClient.build_params(opts, %i[includeDetails includeWorkItems maxCommentLength maxChangeCount])
+      urlparams = APIClient.build_params(opts, [:includeDetails, :includeWorkItems, :maxCommentLength, :maxChangeCount])
       resp = APIClient.get("/changesets/#{id}", area: "tfvc", urlparams: urlparams)
       Changeset.new(resp.parsed)
     end

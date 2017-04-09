@@ -6,7 +6,7 @@ module VSTS
 
     # Create Identity from allowed hash values
     def initialize(identity_hash = {})
-      identity_hash.select! { |k, _v| %w[id displayName uniqueName url imageUrl].include?(k) }
+      identity_hash.select! { |k, _v| ["id", "displayName", "uniqueName", "url", "imageUrl"].include?(k) }
       identity_hash.each do |k, v|
         usk = underscore(k)
         public_send("#{usk}=", v)
