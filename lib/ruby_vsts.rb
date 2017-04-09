@@ -1,3 +1,4 @@
+require 'vsts/version'
 require 'vsts/configuration'
 require 'vsts/api_client'
 require 'vsts/api_response'
