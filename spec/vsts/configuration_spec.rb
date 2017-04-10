@@ -3,6 +3,7 @@ require 'spec_helper'
 # rubocop:disable Metrics/BlockLength
 describe VSTS::Configuration do
   before do
+    VSTS.reset
     VSTS.configure do |config|
       config.personal_access_token = "test_token"
       config.base_url = "https://testurl.local/"

@@ -1,4 +1,5 @@
 require 'rspec'
+require 'webmock/rspec'
 require 'simplecov'
 require 'simplecov-json'
 require 'codeclimate-test-reporter'
@@ -15,4 +16,10 @@ RSpec.configure do |config|
   config.order = 'random'
 end
 
+WebMock.disable_net_connect!
+
 require 'ruby_vsts'
+
+def fixtures_path
+  File.dirname(__FILE__) + '/fixtures/'
+end
