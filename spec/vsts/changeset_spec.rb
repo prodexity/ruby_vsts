@@ -46,6 +46,6 @@ describe VSTS::Changeset do
       changeset_list = described_class.find_all
       expect(changeset_list.length).to eq(18)
     end
-  end  
+  end
 end
 # rubocop:enable Metrics/BlockLength
