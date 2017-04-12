@@ -10,6 +10,25 @@ An unofficial Microsoft Visual Studio Team Services (VSTS) API client in Ruby
 This will be a Ruby gem to connect to the Microsoft Visual Studio online (VSTS) Rest API.
 It may also work with recent versions of TFS too. *Work is heavily in progress!*
 
+## Install
+
+### Easy way
+```
+gem install ruby_vsts
+```
+
+### Secure way
+
+Add the public signing key to verify signature:
+```
+gem cert --add <(curl -Ls https://raw.github.com/prodexity/ruby_vsts/master/certs/ruby_vsts-gem-public_cert.pem)
+```
+
+Install with checking signatures:
+```
+gem install ruby_vsts -P HighSecurity
+```
+
 ## Usage
 
 ### Setup
