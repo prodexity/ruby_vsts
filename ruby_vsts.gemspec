@@ -1,6 +1,7 @@
 basedir = File.expand_path(File.dirname(__FILE__))
 require "#{basedir}/lib/vsts/version"
 
+# rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |s|
   s.name        = 'ruby_vsts'
   s.version     = VSTS::VERSION
@@ -14,6 +15,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
   s.homepage    = 'https://github.com/prodexity/ruby_vsts/'
   s.license     = 'MIT'
+  s.required_ruby_version = '~> 2.0'
 
   # s.test_files = s.files.grep(%r{^(test|spec|features)/})
   # s.require_paths = %w(lib)
@@ -34,3 +36,4 @@ Gem::Specification.new do |s|
   s.cert_chain  = ['certs/ruby_vsts-gem-public_cert.pem']
   s.signing_key = File.expand_path("~/.ssh/ruby_vsts-gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
 end
+# rubocop:enable Metrics/BlockLength
