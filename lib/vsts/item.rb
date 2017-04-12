@@ -14,6 +14,10 @@ module VSTS
       @url = h["url"]
     end
 
+    # Download TFVC item (ie. the file itself)
+    # See https://www.visualstudio.com/en-us/docs/integrate/api/tfvc/items#get-a-file
+    #
+    # @return [String] the downloaded file contents
     def get
       resp = APIClient.get("/items", area: "tfvc", urlparams: { path: @path })
       resp.body
