@@ -13,5 +13,10 @@ module VSTS
       @path = h["path"]
       @url = h["url"]
     end
+
+    def get
+      resp = APIClient.get("/items", area: "tfvc", urlparams: { path: @path })
+      resp.body
+    end
   end
 end

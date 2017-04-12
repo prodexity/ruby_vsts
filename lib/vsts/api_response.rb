@@ -14,7 +14,11 @@ module VSTS
       @request = request
       @code = response.code
       @body = response.body
-      @parsed = JSON.parse(@body)
+      begin
+        @parsed = JSON.parse(@body)
+      rescue JSON::ParserError
+        @parsed = nil
+      end
     end
   end
 end
