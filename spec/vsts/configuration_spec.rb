@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 # rubocop:disable Metrics/BlockLength
 describe VSTS::Configuration do
@@ -15,11 +15,11 @@ describe VSTS::Configuration do
     end
   end
 
-  it 'has an accessible configuration' do
+  it "has an accessible configuration" do
     expect(VSTS.configuration).to be_a(described_class)
   end
 
-  it 'has its fields configured' do
+  it "has its fields configured" do
     expect(VSTS.configuration.personal_access_token).to eq("test_token")
     expect(VSTS.configuration.base_url).to eq("https://testurl.local/")
     expect(VSTS.configuration.collection).to eq("testcollection")
@@ -29,12 +29,12 @@ describe VSTS::Configuration do
     expect(VSTS.configuration.debug).to eq(true)
   end
 
-  it 'can be reconfigured' do
+  it "can be reconfigured" do
     VSTS.configuration.debug = false
     expect(VSTS.configuration.debug).to eq(false)
   end
 
-  it 'can be reset' do
+  it "can be reset" do
     VSTS.reset
     expect(VSTS.configuration.personal_access_token).to eq("")
     expect(VSTS.configuration.base_url).to eq("")

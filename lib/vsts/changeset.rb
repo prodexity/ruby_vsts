@@ -49,7 +49,7 @@ module VSTS
           ["searchCriteria.", :toDate],
           ["$", :top],
           ["$", :skip],
-          ["$", :orderby],
+          ["$", :orderBy],
           :maxCommentLength
         ]
       )

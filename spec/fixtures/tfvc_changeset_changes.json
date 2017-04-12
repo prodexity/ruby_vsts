@@ -1,0 +1,13 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "item": {
+        "version": 16,
+        "path": "$/Fabrikam-Fiber-TFVC/AuthSample-dev/Code/AuthSample.cs",
+        "url": "https://fabrikam-fiber-inc.visualstudio.com/DefaultCollection/_apis/tfvc/items/%24/Fabrikam-Fiber-TFVC/AuthSample-dev/Code/AuthSample.cs?versionType=Changeset&version=16"
+      },
+      "changeType": "edit"
+    }
+  ]
+}
