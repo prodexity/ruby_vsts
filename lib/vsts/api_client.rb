@@ -16,6 +16,8 @@ module VSTS
     # @option opts [String] :collection
     # @option opts [String] :team_project
     # @option opts [String] :area
+    # @option opts [String] :accept
+    # @option opts [String] :content_type
     # @option opts [Hash] :urlparams
     # @return [Hash] request results as parsed from json
     def self.request(method, resource, opts = {})
@@ -27,8 +29,8 @@ module VSTS
         payload: opts[:payload],
         headers: {
           Authorization: authz_header_value,
-          Accept: "application/json",
-          "Content-Type" => "application/json"
+          Accept: opts[:accept] || "application/json",
+          "Content-Type" => opts[:content_type] || "application/json"
         }
       }
       resp = RestClient::Request.execute(req)

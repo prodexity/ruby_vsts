@@ -27,7 +27,7 @@ module VSTS
     def get(opts = {})
       urlparams = APIClient.build_params(opts, [:versionType, :version, :versionOptions])
       urlparams[:path] = @path
-      resp = APIClient.get("/items", area: "tfvc", urlparams: urlparams)
+      resp = APIClient.get("/items", area: "tfvc", urlparams: urlparams, accept: "application/binary")
       resp.body
     end
   end
