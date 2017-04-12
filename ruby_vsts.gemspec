@@ -18,20 +18,19 @@ Gem::Specification.new do |s|
   # s.test_files = s.files.grep(%r{^(test|spec|features)/})
   # s.require_paths = %w(lib)
 
-  s.add_runtime_dependency 'rest-client'
+  s.add_runtime_dependency 'rest-client', '~> 2.0'
 
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'webmock'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'simplecov-json'
-  s.add_development_dependency 'rubocop'
-  s.add_development_dependency 'rubocop-rspec'
-  s.add_development_dependency 'codeclimate-test-reporter'
-  s.add_development_dependency 'yard'
+  s.add_development_dependency 'bundler', '~> 1.14'
+  s.add_development_dependency 'rake', '~> 12.0'
+  s.add_development_dependency 'rspec', '~> 3.5'
+  s.add_development_dependency 'webmock', '~> 3.0'
+  s.add_development_dependency 'simplecov', '~> 0.13'
+  s.add_development_dependency 'simplecov-json', '~> 0.2'
+  s.add_development_dependency 'rubocop', '~> 0.48'
+  s.add_development_dependency 'rubocop-rspec', '~> 1.15'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
+  s.add_development_dependency 'yard', '~> 0.9'
 
   s.cert_chain  = ['certs/ruby_vsts-gem-public_cert.pem']
   s.signing_key = File.expand_path("~/.ssh/ruby_vsts-gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
 end
-
