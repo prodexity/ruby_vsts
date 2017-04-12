@@ -1,5 +1,6 @@
 # Gem builds
 pkg/
+*.gem
 
 # Bundler files
 .bundle

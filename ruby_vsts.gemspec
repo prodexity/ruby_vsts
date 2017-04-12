@@ -30,4 +30,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop-rspec'
   s.add_development_dependency 'codeclimate-test-reporter'
   s.add_development_dependency 'yard'
+
+  s.cert_chain  = ['certs/ruby_vsts-gem-public_cert.pem']
+  s.signing_key = File.expand_path("~/.ssh/ruby_vsts-gem-private_key.pem") if $PROGRAM_NAME.end_with?("gem")
 end
+
