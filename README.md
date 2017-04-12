@@ -1,6 +1,7 @@
 # ruby_vsts
 An unofficial Microsoft Visual Studio Team Services (VSTS) API client in Ruby
 
+[![Gem Version](https://badge.fury.io/rb/ruby_vsts.svg)](https://badge.fury.io/rb/ruby_vsts)
 [![Code Climate](https://codeclimate.com/github/prodexity/ruby_vsts.png)](https://codeclimate.com/github/prodexity/ruby_vsts)
 [![Issue Count](https://codeclimate.com/github/prodexity/ruby_vsts/badges/issue_count.svg)](https://codeclimate.com/github/prodexity/ruby_vsts)
 [![Test Coverage](https://codeclimate.com/github/prodexity/ruby_vsts/badges/coverage.svg)](https://codeclimate.com/github/prodexity/ruby_vsts/coverage)
