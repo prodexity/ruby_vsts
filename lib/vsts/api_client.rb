@@ -1,5 +1,6 @@
 require 'rest-client'
 require 'base64'
+require 'erb'
 
 # VSTS namespace
 module VSTS
@@ -105,7 +106,7 @@ module VSTS
       area = opts[:area] || VSTS.configuration.area
       resource.sub!(%r{^\/+}, "")
 
-      base = [base_url, collection, team_project, "_apis", area, resource].compact.join("/")
+      base = [base_url, collection, team_project, "_apis", area, ERB::Util.url_encode(resource)].compact.join("/")
       urlparams["api-version"] ||= api_version
       url_encoded_params = URI.encode_www_form(urlparams) # makes url params from Hash
 

@@ -7,6 +7,7 @@ require 'vsts/identity'
 require 'vsts/item'
 require 'vsts/change'
 require 'vsts/changeset'
+require 'vsts/shelveset'
 
 # Base namespace for ruby_vsts
 module VSTS
