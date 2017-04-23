@@ -21,7 +21,8 @@ describe VSTS::Item do
       .to_return(status: 200, body: "test file\ncontents")
   end
 
-  let(:item) { VSTS::Changeset.find(16).changes[0].item }
+  let(:change) { VSTS::Changeset.find(16).changes[0] }
+  let(:item) { change.item }
   let(:expected_url) { "https://test.visualstudio.local/DefaultCollection/_apis/tfvc/items" }
 
   it "downloads from the correct URL" do
@@ -69,6 +70,28 @@ describe VSTS::Item do
     }
     item.get(versionType: :changeset, version: 1000, versionOptions: :previous)
     expect(a_request(:get, expected_url).with(query: query)).to have_been_made.once
+  end
+
+  describe "convenience methods (shortcuts)" do
+    it "passes on #version to its Item and returns the same results" do
+      expect(change.item.version).to eq(change.version)
+    end
+
+    it "passes on #path to its Item and returns the same results" do
+      expect(change.item.path).to eq(change.path)
+    end
+
+    it "passes on #url to its Item and returns the same results" do
+      expect(change.item.url).to eq(change.url)
+    end
+
+    it "passes on #get to its Item and returns the same results" do
+      expect(change.item.get).to eq(change.get)
+    end
+
+    it "passes on #get to its Item with parameters and returns the same results" do
+      expect(change.item.get(version: 123)).to eq(change.get(version: 123))
+    end
   end
 end
 # rubocop:enable Metrics/BlockLength
