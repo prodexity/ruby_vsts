@@ -44,6 +44,7 @@ end
 ### Finding changesets
 ```ruby
 VSTS::Changeset.find(72300) # find changeset by id
+VSTS::Changeset.find_all # find all changesets (paged)
 VSTS::Changeset.find_all(author: "fabrikam13@hotmail.com") # find by author
 VSTS::Changeset.find_all(fromId: 1000, toId: 1200) # find by id range
 VSTS::Changeset.find_all(fromDate: "03-01-2017", toDate: "03-18-2017-2:00PM") # find by date range
@@ -52,7 +53,16 @@ VSTS::Changeset.find_all(top: 20, skip: 100) # paging
 # ...
 ```
 
-### Getting changes in a changeset
+### Finding shelvesets
+```ruby
+VSTS::Shelveset.find_all # find all shelvesets (paged)
+VSTS::Shelveset.find_all(owner: "fabrikam13@hotmail.com") # find by owner email
+VSTS::Shelveset.find_all(owner: "John Doe") # find by owner display name
+VSTS::Shelveset.find_all(owner: "11111111-2222-3333-4444-555555555555") # find by owner guid
+VSTS::Shelveset.find_all(top: 20, skip: 100) # paging
+```
+
+### Getting changes in a changeset (or a shelveset)
 ```ruby
 changeset = VSTS::Changeset.find(72300)
 changes = changeset.changes
@@ -60,8 +70,18 @@ changes = changeset.changes
 
 ### Getting change items
 ```ruby
-item = changes[0]
-file_contents = item.get # current version
+change = changes[0]
+item = change.item
+
+file_contents = item.get # downloads current version
+path = item.path
+url = item.url
+
+# shortcuts:
+change.path === item.path
+change.url === item.url
+change.version === item.version
+change.get === item.get
 ```
 
 Please see specs and the source code for further examples.
