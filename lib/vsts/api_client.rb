@@ -1,6 +1,6 @@
 require 'rest-client'
 require 'base64'
-require 'erb'
+require 'erb' # we need ERB::Util.url_encode to properly encode url parameters, space must be %20 and not +
 
 # VSTS namespace
 module VSTS
