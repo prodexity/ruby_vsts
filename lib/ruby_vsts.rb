@@ -3,11 +3,7 @@ require 'vsts/configuration'
 require 'vsts/api_client'
 require 'vsts/api_response'
 require 'vsts/model/base_model'
-require 'vsts/model/identity'
-require 'vsts/model/item'
-require 'vsts/model/change'
-require 'vsts/model/changeset'
-require 'vsts/model/shelveset'
+Dir[File.dirname(__FILE__) + '/vsts/model/*.rb'].each { |file| require file }
 
 # Base namespace for ruby_vsts
 module VSTS
