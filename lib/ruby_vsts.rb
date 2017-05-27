@@ -2,12 +2,12 @@ require 'vsts/version'
 require 'vsts/configuration'
 require 'vsts/api_client'
 require 'vsts/api_response'
-require 'vsts/base_model'
-require 'vsts/identity'
-require 'vsts/item'
-require 'vsts/change'
-require 'vsts/changeset'
-require 'vsts/shelveset'
+require 'vsts/model/base_model'
+require 'vsts/model/identity'
+require 'vsts/model/item'
+require 'vsts/model/change'
+require 'vsts/model/changeset'
+require 'vsts/model/shelveset'
 
 # Base namespace for ruby_vsts
 module VSTS
