@@ -1,5 +1,4 @@
-basedir = File.expand_path(File.dirname(__FILE__))
-require "#{basedir}/lib/vsts/version"
+require "#{__dir__}/lib/vsts/version"
 
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |s|
