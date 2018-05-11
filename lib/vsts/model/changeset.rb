@@ -12,7 +12,7 @@ module VSTS
       @url = h["url"]
       @author = Identity.new(h["author"])
       @checked_in_by = Identity.new(h["checkedInBy"])
-      @created_date = DateTime.rfc3339(h["createdDate"])
+      @created_date = Date.rfc3339(h["createdDate"])
       @comment = h["comment"]
       @_changes = nil
     end

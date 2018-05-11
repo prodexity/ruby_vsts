@@ -12,7 +12,7 @@ module VSTS
       @name = h["name"]
       @url = h["url"]
       @owner = Identity.new(h["owner"])
-      @created_date = DateTime.rfc3339(h["createdDate"])
+      @created_date = Date.rfc3339(h["createdDate"])
       @comment = h["comment"]
       @_changes = nil
     end
