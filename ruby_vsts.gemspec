@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
   s.homepage    = 'https://github.com/prodexity/ruby_vsts/'
   s.license     = 'MIT'
-  s.required_ruby_version = '~> 2.0'
+  s.required_ruby_version = '~> 2.1'
 
   # s.test_files = s.files.grep(%r{^(test|spec|features)/})
   # s.require_paths = %w(lib)
