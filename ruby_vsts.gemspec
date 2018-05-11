@@ -23,14 +23,14 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rest-client', '~> 2.0'
 
   s.add_development_dependency 'bundler', '~> 1.14'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
   s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'rspec', '~> 3.5'
-  s.add_development_dependency 'webmock', '~> 3.0'
-  s.add_development_dependency 'simplecov', '~> 0.13'
-  s.add_development_dependency 'simplecov-json', '~> 0.2'
   s.add_development_dependency 'rubocop', '~> 0.48'
   s.add_development_dependency 'rubocop-rspec', '~> 1.15'
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
+  s.add_development_dependency 'simplecov', '~> 0.13'
+  s.add_development_dependency 'simplecov-json', '~> 0.2'
+  s.add_development_dependency 'webmock', '~> 3.0'
   s.add_development_dependency 'yard', '~> 0.9'
 
   s.cert_chain  = ['certs/ruby_vsts-gem-public_cert.pem']
