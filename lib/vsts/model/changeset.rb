@@ -7,13 +7,13 @@ module VSTS
     # Create new changeset instance from a hash
     #
     # @param h [Hash] changeset data as returned by the VSTS API
-    def initialize(h = {})
-      @id = h["changesetId"]
-      @url = h["url"]
-      @author = Identity.new(h["author"])
-      @checked_in_by = Identity.new(h["checkedInBy"])
-      @created_date = DateTime.rfc3339(h["createdDate"])
-      @comment = h["comment"]
+    def initialize(changeset = {})
+      @id = changeset["changesetId"]
+      @url = changeset["url"]
+      @author = Identity.new(changeset["author"])
+      @checked_in_by = Identity.new(changeset["checkedInBy"])
+      @created_date = Date.rfc3339(changeset["createdDate"])
+      @comment = changeset["comment"]
       @_changes = nil
     end
 

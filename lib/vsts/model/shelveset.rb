@@ -7,13 +7,13 @@ module VSTS
     # Create new shelveset instance from a hash
     #
     # @param h [Hash] shelveset data as returned by the VSTS API
-    def initialize(h = {})
-      @id = h["id"]
-      @name = h["name"]
-      @url = h["url"]
-      @owner = Identity.new(h["owner"])
-      @created_date = DateTime.rfc3339(h["createdDate"])
-      @comment = h["comment"]
+    def initialize(shelveset = {})
+      @id = shelveset["id"]
+      @name = shelveset["name"]
+      @url = shelveset["url"]
+      @owner = Identity.new(shelveset["owner"])
+      @created_date = Date.rfc3339(shelveset["createdDate"])
+      @comment = shelveset["comment"]
       @_changes = nil
     end
 

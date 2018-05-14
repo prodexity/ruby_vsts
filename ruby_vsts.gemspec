@@ -1,5 +1,4 @@
-basedir = File.expand_path(File.dirname(__FILE__))
-require "#{basedir}/lib/vsts/version"
+require "#{__dir__}/lib/vsts/version"
 
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |s|
@@ -15,7 +14,7 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split($OUTPUT_RECORD_SEPARATOR)
   s.homepage    = 'https://github.com/prodexity/ruby_vsts/'
   s.license     = 'MIT'
-  s.required_ruby_version = '~> 2.0'
+  s.required_ruby_version = '~> 2.1'
 
   # s.test_files = s.files.grep(%r{^(test|spec|features)/})
   # s.require_paths = %w(lib)
@@ -23,14 +22,14 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'rest-client', '~> 2.0'
 
   s.add_development_dependency 'bundler', '~> 1.14'
+  s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
   s.add_development_dependency 'rake', '~> 12.0'
   s.add_development_dependency 'rspec', '~> 3.5'
-  s.add_development_dependency 'webmock', '~> 3.0'
-  s.add_development_dependency 'simplecov', '~> 0.13'
-  s.add_development_dependency 'simplecov-json', '~> 0.2'
   s.add_development_dependency 'rubocop', '~> 0.48'
   s.add_development_dependency 'rubocop-rspec', '~> 1.15'
-  s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0'
+  s.add_development_dependency 'simplecov', '~> 0.13'
+  s.add_development_dependency 'simplecov-json', '~> 0.2'
+  s.add_development_dependency 'webmock', '~> 3.0'
   s.add_development_dependency 'yard', '~> 0.9'
 
   s.cert_chain  = ['certs/ruby_vsts-gem-public_cert.pem']

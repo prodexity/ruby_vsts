@@ -7,11 +7,6 @@ Dir[File.dirname(__FILE__) + '/vsts/model/*.rb'].each { |file| require file }
 
 # Base namespace for ruby_vsts
 module VSTS
-  class << self
-    attr_accessor :configuration
-    attr_accessor :logger
-  end
-
   def self.configuration
     @configuration ||= Configuration.new
   end
