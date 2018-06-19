@@ -1,3 +1,5 @@
+# THIS PROJECT WAS MOVED TO GITLAB.
+
 # ruby_vsts
 An unofficial Microsoft Visual Studio Team Services (VSTS) API client in Ruby
 
