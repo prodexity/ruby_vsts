@@ -1,4 +1,4 @@
-# THIS PROJECT WAS MOVED TO GITLAB.
+# THIS PROJECT WAS MOVED TO [GITLAB](https://gitlab.com/prodexity/ruby_vsts).
 
 # ruby_vsts
 An unofficial Microsoft Visual Studio Team Services (VSTS) API client in Ruby
